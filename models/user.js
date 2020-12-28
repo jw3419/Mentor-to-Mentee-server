@@ -17,8 +17,8 @@ module.exports = (sequelize, DataTypes) => {
     username: DataTypes.STRING,
     password: DataTypes.STRING,
     email: {
-      type:DataTypes.STRING, 
-      primaryKey : true
+      type: DataTypes.STRING,
+      primaryKey: true
     },
     mobile: DataTypes.STRING,
     gender: DataTypes.STRING,
@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     isMentor: DataTypes.BOOLEAN
   }, {
     sequelize,
-    modelName: 'user',
+    modelName: 'user'
   });
   return user;
 };

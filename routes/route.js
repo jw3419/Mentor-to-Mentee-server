@@ -7,6 +7,8 @@ const {
     // questPageController 
 } = require('../controller')
 
+// router.post('/emailSignIn', mainPageController.emailSignIn.post)
 router.post('/emailSignIn', mainPageController.emailSignIn.post)
+
 
 module.exports = router;

@@ -1,5 +1,5 @@
 module.exports = {
-    mainPageController: require("./main_page"),
+    mainPageController: require('./main_page'),
     // myPageController: require('./my_page'),
     // myQuestPageController: require('./my_question_page'),
     // questPageController: require('./question_page')
