@@ -11,11 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-<<<<<<< HEAD
       mentee.belongsTo(models.user, {foreignKey: 'menteeEmail', targetKey: 'email'});
       mentee.hasMany(models.qa, {foreignKey: 'menteeId', sourceKey: 'id'});
-=======
->>>>>>> e887793e778aad8e3e26e76042b192c1c3c83d8d
     }
   };
   mentee.init({
