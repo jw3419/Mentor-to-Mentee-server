@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { 
     mainPageController, 
-    // myPageController, 
+    myPageController, 
     // myQuestPageController, 
     // questPageController
     tokenController 
@@ -15,5 +15,6 @@ router.post('/applyMentor', mainPageController.applyMentor.post)
 router.get('/accessTokenHandler', tokenController.accessTokenHandler.get)
 router.get('/refreshTokenHandler', tokenController.refreshTokenHandler.get)
 router.get('/main', mainPageController.main.get)
+router.get('/signOut', myPageController.signOut.get)
 
 module.exports = router;
