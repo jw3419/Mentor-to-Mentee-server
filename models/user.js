@@ -23,10 +23,13 @@ module.exports = (sequelize, DataTypes) => {
     mobile: DataTypes.STRING,
     gender: DataTypes.STRING,
     image: DataTypes.STRING,
-    isMentor: DataTypes.BOOLEAN
+    isMentor: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    }
   }, {
     sequelize,
-    modelName: 'user'
+    modelName: 'user',
   });
   return user;
 };

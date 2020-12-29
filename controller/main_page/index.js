@@ -1,5 +1,5 @@
 module.exports = {
-    signup: require('./signUp'),
+    emailSignUp: require('./signUp'),
     emailSignIn: require('./emailSignIn'),
     applyMentor: require('./applyMentor')
 }
