@@ -11,8 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+<<<<<<< HEAD
       user.hasOne(models.mentor, {foreignKey: 'mentorEmail', sourceKey: 'email'})
       user.hasOne(models.mentee, {foreignKey: 'menteeEmail', sourceKey: 'email'})
+=======
+>>>>>>> e887793e778aad8e3e26e76042b192c1c3c83d8d
     }
   };
   user.init({
@@ -27,7 +30,11 @@ module.exports = (sequelize, DataTypes) => {
     image: DataTypes.STRING,
     isMentor: {
       type: DataTypes.BOOLEAN,
+<<<<<<< HEAD
       defaultValue: false
+=======
+      defaultValue: true
+>>>>>>> e887793e778aad8e3e26e76042b192c1c3c83d8d
     }
   }, {
     sequelize,

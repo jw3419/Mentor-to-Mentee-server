@@ -5,6 +5,7 @@ module.exports = {
     return queryInterface.bulkInsert('users', [
       {
         username: 'leejaewon',
+<<<<<<< HEAD
         password: '1234',
         email: 'lllljw@nate.com',
         createdAt: new Date(),
@@ -53,11 +54,18 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
         isMentor: false
+=======
+        password: 'dlwodnjs1@',
+        email: 'lllljw@nate.com',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+>>>>>>> e887793e778aad8e3e26e76042b192c1c3c83d8d
       },
     ]);
   },
 
   down: async (queryInterface, Sequelize) => {
+<<<<<<< HEAD
     return queryInterface.bulkDelete('users', [
       {
         username: 'leejaewon',
@@ -110,5 +118,8 @@ module.exports = {
         isMentor: false
       },
     ]);
+=======
+    return queryInterface.bulkDelete('users', null, {});
+>>>>>>> e887793e778aad8e3e26e76042b192c1c3c83d8d
   }
 };
