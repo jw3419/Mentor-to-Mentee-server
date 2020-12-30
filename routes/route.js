@@ -20,5 +20,6 @@ router.get('/userInfoSetting/pageload', myPageController.setAccount.get)
 router.post('/userInfoSetting/setAccount', myPageController.setAccount.post)
 router.get('/mentorInfoSetting/pageload', myPageController.setMentor.get)
 router.post('/mentorInfoSetting/setMentor', myPageController.setMentor.post)
+router.post('/imageUpload', myPageController.imgUpload.uploadImageToS3)
 
 module.exports = router;
