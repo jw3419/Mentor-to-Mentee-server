@@ -19,7 +19,7 @@ module.exports = {
         }
         // 일치한다면 => req.body.email 로 db내에 비밀번호를 갖고온다.
         // 유저정보를 갖고온다 email과 일치하지않으면 없는 계정임을 보내준다. 
-        await user.findByPk(req.body.email).then((result) => {
+        await user.findByPk(req.body.email).then( async (result) => {
             if (!result) {
                 return res.status(404).json({
                     message: '없는 계정입니다.'

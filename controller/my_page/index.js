@@ -1,5 +1,7 @@
 module.exports = {
-    account: require('./getmypage'),
-    getmentee: require('./getmentee'),
+    setAccount: require('./userInfoSetting'),
+    setMentor: require('./mentorSetting'),
+    setMentee: require('./menteeSetting'),
+    setPassword: require('./pwSetting'),
     signOut: require('./signOut')
 }
