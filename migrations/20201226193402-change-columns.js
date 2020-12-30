@@ -18,48 +18,32 @@ module.exports = {
       references: {
         model: 'users',
         key: 'email'
-<<<<<<< HEAD
       },
       onDelete: 'CASCADE'
-=======
-      }
->>>>>>> e887793e778aad8e3e26e76042b192c1c3c83d8d
     });
     await queryInterface.changeColumn('mentees', 'menteeEmail', {
       type: Sequelize.STRING,
       references: {
         model: 'users',
         key: 'email'
-<<<<<<< HEAD
       },
       onDelete: 'CASCADE'
-=======
-      }
->>>>>>> e887793e778aad8e3e26e76042b192c1c3c83d8d
     });
     await queryInterface.changeColumn('qas', 'mentorId', {
       type: Sequelize.STRING,
       references: {
         model: 'mentors',
         key: 'id'
-<<<<<<< HEAD
       },
       onDelete: 'CASCADE'
-=======
-      }
->>>>>>> e887793e778aad8e3e26e76042b192c1c3c83d8d
     });
     await queryInterface.changeColumn('qas', 'menteeId', {
       type: Sequelize.STRING,
       references: {
         model: 'mentees',
         key: 'id'
-<<<<<<< HEAD
       },
       onDelete: 'CASCADE'
-=======
-      }
->>>>>>> e887793e778aad8e3e26e76042b192c1c3c83d8d
     });
   },
 
