@@ -25,5 +25,6 @@ router.post('/mentorInfoSetting/setMentor', myPageController.setMentor.post)
 // Question Page API 생성
 router.post('/askQuestion', questPageController.sendQ.post)
 router.get('/getQuestion', myQuestPageController.getQ.get)
-questPageController.sendQ
+router.post('/imageUpload', myPageController.imgUpload.uploadImageToS3)
+
 module.exports = router;

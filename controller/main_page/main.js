@@ -29,5 +29,21 @@ module.exports = {
             .catch((error) => {
                 console.log(error)
             })
+    },
+
+
+    post: async (req, res) => {
+        // menteeEmial
+        await qa.create({
+            
+        })
     }
 }
+
+/*
+    brief: DataTypes.STRING,
+    question: DataTypes.STRING,
+    answer: DataTypes.STRING,
+    mentorId: DataTypes.INTEGER,
+    menteeId: DataTypes.INTEGER
+    */
