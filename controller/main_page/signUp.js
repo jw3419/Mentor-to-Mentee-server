@@ -1,4 +1,4 @@
-const {user} = require('../../models')
+const {user, mentee} = require('../../models')
 module.exports = {
 
     post: async (req, res) => {
@@ -9,6 +9,9 @@ module.exports = {
                 email: req.body.email,
                 password: req.body.password,
                 isMentor: false
+            })
+            let menteeInfo = await mentee.create({
+                menteeEmail: req.body.email
             })
             res.status(201).json({data: userInfo, message: 'Success Sign Up'});
         }

@@ -24,7 +24,7 @@ module.exports = {
     post: async (req, res) => {
         // TODO : 회원의 email 을 나타내주고 기존에 작성되어있으면 res에 보내주고 작성이 안되어있다면 새 작성폼 주기.
         
-        if (!req.body.gender || !req.body.username || !req.body.mobile || !req.body.gender) {
+        if (!req.body.email || !req.body.username || !req.body.mobile || !req.body.gender) {
             res.status(422).send('모든 항목을 충족해주시길 바랍니다.')
         } else {
             let newUser = await user.update({

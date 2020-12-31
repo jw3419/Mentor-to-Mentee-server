@@ -3,7 +3,6 @@ const { user } = require('../../models')
 
 module.exports = {
     get: async (req, res) => {
-
         await user.findAll({
             attributes: ['username', 'email'],
             include: [
