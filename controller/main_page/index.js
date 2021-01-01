@@ -3,5 +3,6 @@ module.exports = {
     emailSignIn: require('./emailSignIn'),
     applyMentor: require('./applyMentor'),
     main: require('./main'),
-    naverCallback: require('./naverCallback')
+    naverCallback: require('./naverCallback'),
+    googleCallback: require('./googleCallback')
 }

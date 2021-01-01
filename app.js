@@ -32,10 +32,10 @@ app.use(
 app.use(cookieParser());
 app.use('/', router)
 
-const HTTPS_PORT = process.env.HTTPS_PORT || 4000;
+const HTTP_PORT = process.env.HTTP_PORT || 4000;
 
-app.listen(HTTPS_PORT, () => {
-    console.log("server runnning ", HTTPS_PORT)
+app.listen(HTTP_PORT, () => {
+    console.log("server runnning ", HTTP_PORT)
 });
 
 

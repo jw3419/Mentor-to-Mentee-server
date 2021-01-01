@@ -1,8 +1,6 @@
 const AWS = require('aws-sdk');
 const multer = require('multer');
 const multerS3 = require('multer-s3');
-const { awsconfig } = require('../../config')
-const { user } = require('../../models')
 require("dotenv").config();
 
 const s3 = new AWS.S3({
