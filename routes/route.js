@@ -6,9 +6,10 @@ const {
     myQuestPageController, 
     questPageController,
     tokenController 
-} = require('../controller')
+} = require('../controller');
 
 // Main Page API
+router.get('/naverCallback', mainPageController.naverCallback.get)
 router.post('/emailSignIn', mainPageController.emailSignIn.post)
 router.post('/emailSignUp', mainPageController.emailSignUp.post)
 router.post('/applyMentor', mainPageController.applyMentor.post)
@@ -29,6 +30,6 @@ router.post('/menteeInfoSetting/setMentee', myPageController.setMentee.post)
 // Question Page API 생성
 router.post('/askQuestion', questPageController.sendQ.post)
 router.get('/getQuestion', myQuestPageController.getQ.get)
-router.post('/imageUpload', myPageController.imgUpload.uploadImageToS3)
+// router.post('/imageUpload', myPageController)
 
 module.exports = router;
