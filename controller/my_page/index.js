@@ -3,5 +3,6 @@ module.exports = {
     setMentor: require('./mentorSetting'),
     setMentee: require('./menteeSetting'),
     setPassword: require('./pwSetting'),
-    signOut: require('./signOut')
+    signOut: require('./signOut'),
+    imgUpload: require('./imgUpload')
 }

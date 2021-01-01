@@ -1,4 +1,4 @@
-const { user } = require("../../models/user")
+const { user } = require("../../models")
 
 module.exports = {
     // TODO : 현재 비밀번호, 새로운 비밀번호, 새로운 비밀번호 확인 을 클라이언트에서 받는다.
@@ -8,18 +8,20 @@ module.exports = {
 
 
     post: async (req, res) => {
-        const { currentPassword, newPassword, passwordConfirm } = req.body;
-        console.log('password: ', currentPassword, newPassword, passwordConfirm);
+        const { currentPassword, newPassword, passwordConfirm, email } = req.body;
+        console.log('password: ', currentPassword, newPassword, passwordConfirm, email);
 
         // 새로운 비밀번호와 새로운비밀번호 확인 일치 여부
-        if (password !== passwordConfirm) {
+        if (newPassword !== passwordConfirm) {
             return res.status(400).json({
                 message: '새로운 비밀번호가 일치하지않습니다.'
             });
         }
         // 일치한다면 => req.body.email 로 db내에 비밀번호를 갖고온다.
         // 유저정보를 갖고온다 email과 일치하지않으면 없는 계정임을 보내준다. 
-        await user.findByPk(req.body.email).then( async (result) => {
+        await user.findOne({
+            where: { email: email }
+        }).then(async (result) => {
             if (!result) {
                 return res.status(404).json({
                     message: '없는 계정입니다.'

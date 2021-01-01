@@ -35,7 +35,8 @@ module.exports = {
                     const newUser = user.create({
                         username: req.body.username,
                         mobile: req.body.mobile,
-                        gender: req.body.gender
+                        gender: req.body.gender,
+                        image : req.body.image
                     })
                     res.status(201).send({ data: newUser, message: '계정설정 완료' })
                 }
