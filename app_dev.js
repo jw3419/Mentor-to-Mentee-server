@@ -1,7 +1,14 @@
 require("dotenv").config();
+const https = require('https');
+const fs = require('fs');
 const cors = require("cors");
 const session = require('express-session');
 const cookieParser = require("cookie-parser");
+//cert.pem랑 key.pem은 배포할 때 경로 맞춰줍시다.
+const privateKey = fs.readFileSync(__dirname + "/../../key.pem", "utf8");
+const certificate = fs.readFileSync(__dirname + "/../../cert.pem", "utf8");
+const credentials = { key: privateKey, cert: certificate };
+// const uuid = require('uuid/v4');
 
 const router = require('./routes/route');
 const express = require('express');
@@ -33,11 +40,12 @@ app.use(cookieParser());
 app.use('/', router)
 
 const HTTPS_PORT = process.env.HTTPS_PORT || 4000;
+const httpsServer = https.createServer(credentials, app);
 
-app.listen(HTTPS_PORT, () => {
+httpsServer.listen(HTTPS_PORT, () => {
     console.log("server runnning ", HTTPS_PORT)
 });
 
 
 
-module.exports = app;
+module.exports = httpsServer;
