@@ -4,13 +4,8 @@ const { user } = require('../../models')
 module.exports = {
     get: async (req, res) => {
         await user.findAll({
-            attributes: ['username', 'email'],
-            include: [
-                {
-                    model: mentor,
-                    order: 'createdAt DESC',
-                }
-            ],
+            attributes: ['username', 'email', 'image'],
+            include: [{ model: mentor, order: 'createdAt DESC' }],
             limit: 20,
             where: { isMentor: true }
         }).then((userInfo) => {
@@ -26,30 +21,13 @@ module.exports = {
                     job: el.dataValues.mentor.job,
                     position: el.dataValues.mentor.position,
                     career: el.dataValues.mentor.career,
-                    description: el.dataValues.mentor.description,                    
+                    description: el.dataValues.mentor.description,
                     createdAt: el.dataValues.mentor.createdAt,
                 }
             })
             res.status(200).json({ data: result, message: '멘토카드 보내기 완료!' })
-        })
-            .catch((error) => {
+        }).catch((error) => {
                 console.log(error)
             })
     },
-
-
-    post: async (req, res) => {
-        // menteeEmial
-        await qa.create({
-            
-        })
-    }
 }
-
-/*
-    brief: DataTypes.STRING,
-    question: DataTypes.STRING,
-    answer: DataTypes.STRING,
-    mentorId: DataTypes.INTEGER,
-    menteeId: DataTypes.INTEGER
-    */

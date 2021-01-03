@@ -17,14 +17,14 @@ app.use(
             sameSite: "None",
             httpOnly: true,
             secure: true
-        } 
+        }
     })
 )
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
     cors({
-        origin: ['http://localhost:3000'],
+        origin: ['http://localhost:3000', 'http://mtom-client.s3-website.ap-northeast-2.amazonaws.com'],
         credentials: true,
         methods: ["GET", "POST", "OPTIONS"],
     })

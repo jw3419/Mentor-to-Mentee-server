@@ -26,14 +26,10 @@ const upload = multer({
 module.exports = {
     uploadImageToS3: (req, res) => {
         upload(req, res, (error) => {
-            console.log('requestOkokok', req.file);
-            console.log('error', error);
             if (error) {
-                console.log('errors', error);
                 res.json({ error: error });
             } else {
                 if (req.file === undefined) {
-                    console.log('Error: No File Selected!');
                     res.json('Error: No File Selected');
                 } else {
                     const imageName = req.file.key;

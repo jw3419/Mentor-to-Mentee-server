@@ -4,8 +4,8 @@ const fs = require('fs');
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 //cert.pem랑 key.pem은 배포할 때 경로 맞춰줍시다.
-const privateKey = fs.readFileSync(__dirname + "/../../key.pem", "utf8");
-const certificate = fs.readFileSync(__dirname + "/../../cert.pem", "utf8");
+const privateKey = fs.readFileSync(__dirname + "/key.pem", "utf8");
+const certificate = fs.readFileSync(__dirname + "/cert.pem", "utf8");
 const credentials = { key: privateKey, cert: certificate };
 // const uuid = require('uuid/v4');
 

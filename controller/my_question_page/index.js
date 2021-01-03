@@ -1,3 +1,3 @@
 module.exports = {
-    getQ: require('./getMyQuestion')
+    getMyQuestion: require('./getMyQuestion')
 }
