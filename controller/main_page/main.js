@@ -9,21 +9,27 @@ module.exports = {
                 {
                     model: mentor,
                     order: 'createdAt DESC',
-                    attributes: ['company', 'department', 'createdAt']
                 }
             ],
             limit: 20,
             where: { isMentor: true }
         }).then((userInfo) => {
             let result = userInfo.map((el) => {
+                console.log(el.dataValues.mentor.dataValues)
                 return {
+                    email: el.dataValues.email,
                     username: el.dataValues.username,
+                    image: el.dataValues.image,
+                    mentorId: el.dataValues.mentor.id,
                     company: el.dataValues.mentor.company,
                     department: el.dataValues.mentor.department,
-                    createdAt: el.dataValues.mentor.createdAt
+                    job: el.dataValues.mentor.job,
+                    position: el.dataValues.mentor.position,
+                    career: el.dataValues.mentor.career,
+                    description: el.dataValues.mentor.description,                    
+                    createdAt: el.dataValues.mentor.createdAt,
                 }
             })
-            console.log(result)
             res.status(200).json({ data: result, message: '멘토카드 보내기 완료!' })
         })
             .catch((error) => {
