@@ -1,9 +1,8 @@
-const request = require('request');
 const axios = require('axios');
 module.exports = {
     get: async (req, res) => {
-        code = req.query.code;
-        state = req.query.state;
+        const code = req.query.code;
+        const state = req.query.state;
         const client_id = 'jzmv9M17ZktTLYgIxIfb';
         const client_secret = 'vznusBv6zf';
         const redirectURI = encodeURI("https://localhost:4000/naverCallback");
@@ -17,7 +16,7 @@ module.exports = {
         else {
             let accessToken = tokenInfo.data.access_token;
             let refreshToken = tokenInfo.data.refresh_token;
-            console.log(JSON.stringify({accessToken}))
+            console.log(JSON.stringify({ accessToken }))
 
             res.cookie('accessToken', accessToken, { httpOnly: true });
             req.session.save(() => {

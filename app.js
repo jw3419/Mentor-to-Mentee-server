@@ -17,7 +17,7 @@ app.use(
             sameSite: "None",
             httpOnly: true,
             secure: true
-        } 
+        }
     })
 )
 app.use(express.json());

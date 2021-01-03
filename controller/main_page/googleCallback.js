@@ -19,42 +19,42 @@ module.exports = {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
             withCredentials: true
-        })
-            .then(data => {
-                // 5. oauth로 post 요청을 보내고, acceess token을 서버에 부여받음, oauth -> server
-                console.log('id_token', data.data.id_token)
-                // accesstoken 위치 data.data.id_token
-                const idToken = data.data.id_token;
-                let result = jwt_decode(idToken);
-                return result
-            }).then(data => {
-                console.log('user 적기전 data', data)
-                return user.findOrCreate({
-                    where: {
-                        email: data.email,
-                        username: data.name
-                    },
-                    defaults: {
-                        username: data.name,
-                        password: 'google'
-                    }
-                })
-            }).then((data) => {
-                console.log('data 보여줘', data)
-                const result = {
-                    email: data[0].dataValues.email,
-                    username: data[0].dataValues.username
-                }
+        }).then(data => {
+            // 5. oauth로 post 요청을 보내고, acceess token을 서버에 부여받음, oauth -> server
+            console.log('id_token', data.data.id_token)
+            // accesstoken 위치 data.data.id_token
+            const idToken = data.data.id_token;
+            let result = jwt_decode(idToken);
+            return result
 
-                const token = jwt.sign(result, process.env.ACCESS_SECRET, {
-                    expiresIn: '24h'
-                })
-                res.cookie('token', token, {
-                    httpOnly: true,
-                    secure: true,
-                    sameSite: 'None'
-                })
-                res.redirect(`http:localhost:3000?token=${token}`)
+        }).then(data => {
+            console.log('user 적기전 data', data)
+            return user.findOrCreate({
+                where: {
+                    email: data.email,
+                    username: data.name
+                },
+                defaults: {
+                    username: data.name,
+                    password: 'google'
+                }
             })
+        }).then((data) => {
+            console.log('data 보여줘', data)
+            const result = {
+                email: data[0].dataValues.email,
+                username: data[0].dataValues.username
+            }
+
+            const token = jwt.sign(result, process.env.ACCESS_SECRET, {
+                expiresIn: '24h'
+            })
+            res.cookie('token', token, {
+                httpOnly: true,
+                secure: true,
+                sameSite: 'None'
+            })
+            res.redirect(`http:localhost:3000`)
+        })
     }
 }

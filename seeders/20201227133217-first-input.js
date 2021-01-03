@@ -53,6 +53,36 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
         isMentor: false
+      },{
+        username: '크로캅',
+        password: '1234',
+        email: 'test2@nate.com',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isMentor: false
+      },{
+        username: '최홍만',
+        password: '1234',
+        email: 'test3@nate.com',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isMentor: false
+      },
+      {
+        username: '알리',
+        password: '1234',
+        email: 'test4@nate.com',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isMentor: false
+      },
+      {
+        username: '타이슨',
+        password: '1234',
+        email: 'test5@nate.com',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isMentor: false
       },
     ]);
   },
@@ -105,6 +135,36 @@ module.exports = {
         username: '효도르',
         password: '1234',
         email: 'hyo@nate.com',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isMentor: false
+      },{
+        username: '크로캅',
+        password: '1234',
+        email: 'test2@nate.com',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isMentor: false
+      },{
+        username: '최홍만',
+        password: '1234',
+        email: 'test3@nate.com',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isMentor: false
+      },
+      {
+        username: '알리',
+        password: '1234',
+        email: 'test4@nate.com',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        isMentor: false
+      },
+      {
+        username: '타이슨',
+        password: '1234',
+        email: 'test5@nate.com',
         createdAt: new Date(),
         updatedAt: new Date(),
         isMentor: false

@@ -1,3 +1,4 @@
 module.exports = {
-    sendQ: require('./sendQuestion')
+    sendQ: require('./sendQuestion'),
+    answerQuestion: require('./answerQuestion')
 }
