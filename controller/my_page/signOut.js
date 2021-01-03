@@ -1,3 +1,4 @@
+
 module.exports = {
     // 1. 클라이언트에서 accssToken을 헤더에 담아서 accessTokenHandler 요청을 보낸다.
     // 2. 응답으로 받은 정보에 유저정보가 없으면, refresh 리퀘스트요청을 보낸다.
@@ -9,8 +10,10 @@ module.exports = {
     // 7. 클라이언트에서는 스테이트 안에 isLogin을 false로, access 토큰을 응답으로 받은 것을 넣는다.
 
     get: async (req, res) => {
-        console.log("REFRESH TOKEN : ", req.cookies)
-        delete req.cookies.refreshToken;
+        if(req.cookies.naverAccessToken) res.clearCookie('naverAccessToken');
+        if(req.cookies.naverRefreshToken) res.clearCookie('naverRefreshToken');
+        if(req.cookies.refreshToken) res.clearCookie('refreshToken');
+        console.log(req.cookies)
         res.status(200).json({data: {accessToken: null}, message: 'Success to sign out'})
     }
 }

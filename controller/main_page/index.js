@@ -4,5 +4,5 @@ module.exports = {
     applyMentor: require('./applyMentor'),
     main: require('./main'),
     naverCallback: require('./naverCallback'),
-    googleCallback: require('./googleCallback')
+    googleCallback: require('./googleCallback'),
 }

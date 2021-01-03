@@ -10,6 +10,8 @@ const {
 
 // Main Page API
 router.get('/naverCallback', mainPageController.naverCallback.get)
+router.get('/getNaverUserInfo', mainPageController.naverCallback.getUserInfo)
+router.get('/isAuth', mainPageController.naverCallback.isAuthorized)
 router.post('/emailSignIn', mainPageController.emailSignIn.post)
 router.post('/emailSignUp', mainPageController.emailSignUp.post)
 router.post('/applyMentor', mainPageController.applyMentor.post)
