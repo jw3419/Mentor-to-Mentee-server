@@ -10,6 +10,7 @@ module.exports = {
             where: { isMentor: true }
         }).then((userInfo) => {
             let result = userInfo.map((el) => {
+                console.log(el.dataValues.mentor.dataValues)
                 return {
                     email: el.dataValues.email,
                     username: el.dataValues.username,

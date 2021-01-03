@@ -2,7 +2,6 @@ require("dotenv").config();
 const https = require('https');
 const fs = require('fs');
 const cors = require("cors");
-const session = require('express-session');
 const cookieParser = require("cookie-parser");
 //cert.pem랑 key.pem은 배포할 때 경로 맞춰줍시다.
 const privateKey = fs.readFileSync(__dirname + "/key.pem", "utf8");
@@ -14,24 +13,11 @@ const router = require('./routes/route');
 const express = require('express');
 const app = express();
 
-app.use(
-    session({
-        key: 'sid',
-        secret: '@mtom',
-        resave: false,
-        saveUninitialized: true,
-        cookie: {
-            sameSite: "None",
-            httpOnly: true,
-            secure: true
-        }
-    })
-)
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
     cors({
-        origin: ['http://localhost:3000'],
+        origin: ['http://localhost:3000', 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=jzmv9M17ZktTLYgIxIfb&redirect_uri=https://localhost:4000/naverCallback&state=ek171kdiymm'],
         credentials: true,
         methods: ["GET", "POST", "OPTIONS"],
     })

@@ -2,6 +2,7 @@ const { mentee, mentor, qa, user } = require('../../models');
 
 module.exports = {
   get: async (req, res) => {
+    
     let menteeInfo = await user.findAll({
       attributes: ['username', 'image'],
       include: [{

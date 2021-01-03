@@ -11,6 +11,7 @@ module.exports = {
             res.status(200).json({ data: menteeInfo, message: 'Success to load a page' })
         }
     },
+
     post: async (req, res) => {
         if (!req.body.uni || !req.body.major || !req.body.graduation || !req.body.grade || !req.body.menteeDescription) {
             res.status(404).json({ data: null, message: '모든 항목을 적어주십시오.' })

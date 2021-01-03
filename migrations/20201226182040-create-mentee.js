@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       graduation: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING
       },
       grade: {
         type: Sequelize.STRING
