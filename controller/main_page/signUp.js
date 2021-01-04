@@ -10,7 +10,7 @@ module.exports = {
                 isMentor: false
             })
             let menteeInfo = await mentee.create({ menteeEmail: req.body.email })
-            res.status(201).json({ data: userInfo, message: 'Success Sign Up' });
+            res.status(201).json({ data: userInfo,  message: "Sign Up completed" });
         } else {
             res.status(401).json({ data: null, message: "Fail to Sign Up" })
         }
