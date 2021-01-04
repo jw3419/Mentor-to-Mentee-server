@@ -8,7 +8,7 @@ module.exports = {
         })
         let mentorInfo = userInfo.dataValues.mentor.dataValues
         if (!mentorInfo) {
-            res.json({ data: null, message: `this is not a mentor's account` })
+            res.status(400).json({ data: null, message: `Can't find the account setting` })
         } else {
             res.status(200).json({ data: mentorInfo, message: 'Success to load a page' })
         }

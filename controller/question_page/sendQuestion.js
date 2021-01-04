@@ -13,7 +13,7 @@ module.exports = {
             })
             res.json({ data: qaInfo, message: "Success to ask the question" })
         } else {
-            res.json({ data: null, message: "Must Fill with box" })
+            res.json({ data: null, message: "Please fill in all the required fields" })
         }
     }
 }

@@ -4,8 +4,8 @@ const fs = require('fs');
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 //cert.pem랑 key.pem은 배포할 때 경로 맞춰줍시다.
-const privateKey = fs.readFileSync(__dirname + "/key.pem", "utf8");
-const certificate = fs.readFileSync(__dirname + "/cert.pem", "utf8");
+const privateKey = fs.readFileSync(__dirname + "/../key.pem", "utf8");
+const certificate = fs.readFileSync(__dirname + "/../cert.pem", "utf8");
 const credentials = { key: privateKey, cert: certificate };
 // const uuid = require('uuid/v4');
 
@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
     cors({
-        origin: ['http://localhost:3000', 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=jzmv9M17ZktTLYgIxIfb&redirect_uri=https://localhost:4000/naverCallback&state=ek171kdiymm'],
+        origin: ['http://localhost:3000'],
         credentials: true,
         methods: ["GET", "POST", "OPTIONS"],
     })

@@ -29,6 +29,7 @@ router.get('/mentorInfoSetting/pageload', myPageController.setMentor.get)
 router.post('/mentorInfoSetting/setMentor', myPageController.setMentor.post)
 router.get('/menteeInfoSetting/pageload', myPageController.setMentee.get)
 router.post('/menteeInfoSetting/setMentee', myPageController.setMentee.post)
+router.post('/deleteAccount', myPageController.deleteAccount.post);
 // Question Page API 생성
 router.post('/askQuestion', questPageController.sendQ.post)
 router.post('/answerQuestion', questPageController.answerQuestion.post)

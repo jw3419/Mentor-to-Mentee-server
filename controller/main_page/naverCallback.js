@@ -16,8 +16,8 @@ module.exports = {
             let naverAccessToken = tokenInfo.data.access_token;
             let naverRefreshToken = tokenInfo.data.refresh_token;
 
-            res.cookie('naverAccessToken', naverAccessToken, { httpOnly: true, secure: true });
-            res.cookie('naverRefreshToken', naverRefreshToken, { httpOnly: true, secure: true });
+            res.cookie('naverAccessToken', naverAccessToken, { httpOnly: true, secure: true, sameSite: "None"});
+            res.cookie('naverRefreshToken', naverRefreshToken, { httpOnly: true, secure: true, sameSite: "None" });
 
             res.redirect('http://localhost:3000/')
             // res.json({ data: accessToken, message: 'ok' })
