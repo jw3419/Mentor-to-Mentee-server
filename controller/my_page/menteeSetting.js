@@ -5,16 +5,16 @@ module.exports = {
         let userInfo = await user.findOne({ attributes: ['username', 'email'], include: [{ model: mentee }], where: { email: req.query.email } })
         let menteeInfo = userInfo.dataValues.mentee.dataValues
         if (!menteeInfo) {
-            res.json({ data: null, message: `this is not a mentor's account` })
+            res.json({ data: null, message: "Menteeinfo not found"})
         }
         else {
-            res.status(200).json({ data: menteeInfo, message: 'Success to load a page' })
+            res.status(200).json({ data: menteeInfo, message: 'Completely load a page'  })
         }
     },
 
     post: async (req, res) => {
         if (!req.body.uni || !req.body.major || !req.body.graduation || !req.body.grade || !req.body.menteeDescription) {
-            res.status(404).json({ data: null, message: '모든 항목을 적어주십시오.' })
+            res.status(404).json({ data: null, message: "Please fill in all the required fields" })
         } else {
             await mentee.update({
                 uni: req.body.uni,
@@ -26,9 +26,9 @@ module.exports = {
                 where: { menteeEmail: req.body.menteeEmail }
             }).then((result) => {
                 if (result) {
-                    res.status(200).json({ data: req.body, message: '모든 항목이 적용되었습니다.' })
+                    res.status(200).json({ data: req.body, message: 'Compeltely update the menteeinfo' })
                 } else {
-                    res.status(400).json({ message: '업데이트가 거절당했습니다.' })
+                    res.status(400).json({ message: "Reject to update the menteeinfo"  })
                 }
             })
         }

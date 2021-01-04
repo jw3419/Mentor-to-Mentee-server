@@ -11,7 +11,7 @@ module.exports = {
                 job: req.body.job
             })
             await user.update({ isMentor: true }, { where: { email: req.body.mentorEmail } });
-            res.status(201).json({ data: mentorInfo, message: 'Success to apply mentor' });
+            res.status(201).json({ data: mentorInfo, message: 'Applying mentor completed'  });
         } else {
             res.status(401).json({ data: null, message: "Fail to apply mentor" })
         }

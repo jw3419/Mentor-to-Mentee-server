@@ -74,7 +74,7 @@ module.exports = {
           sentQuestion: sendData.sentQuestion,
           receivedQuestion: sendData.receivedQuestion,
         },
-        message: 'Success to get Qustions and Answers',
+        message: 'Completely get the qustions and answers',
       });
     }
   },

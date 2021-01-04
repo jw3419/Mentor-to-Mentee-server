@@ -4,7 +4,7 @@ module.exports = {
     post: async (req, res) => {
         const { currentPassword, newPassword, passwordConfirm, email } = req.body;
         if (newPassword !== passwordConfirm) {
-            return res.status(400).json({ message: '새로운 비밀번호가 일치하지않습니다.' });
+            return res.status(400).json({ message: "Password not matched" });
         }
         await user.findOne({
             where: { email: email }
@@ -16,9 +16,9 @@ module.exports = {
             }
             if (result.dataValues.password === currentPassword) {
                 await user.update({ password: newPassword }, { where: { email: req.body.email } })
-                res.status(204).json({ message: '비밀번호가 변경 되었습니다.' })
+                res.status(201).json({ message: "Password changed" })
             } else {
-                res.status(404).json({ message: '비밀번호가 일치하지 않습니다.' })
+                res.status(404).json({ message: "Unexpected error" })
             }
         })
     }

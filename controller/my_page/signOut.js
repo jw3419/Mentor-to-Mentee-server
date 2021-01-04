@@ -5,6 +5,6 @@ module.exports = {
         if(req.cookies.naverRefreshToken) res.clearCookie('naverRefreshToken');
         if(req.cookies.refreshToken) res.clearCookie('refreshToken');
         console.log(req.cookies)
-        res.status(200).json({data: {accessToken: null}, message: 'Success to sign out'})
+        res.status(200).json({data: {accessToken: null}, message: 'sign out completed'})
     }
 }

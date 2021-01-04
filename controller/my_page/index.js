@@ -4,5 +4,6 @@ module.exports = {
     setMentee: require('./menteeSetting'),
     setPassword: require('./pwSetting'),
     signOut: require('./signOut'),
-    imgUpload: require('./imgUpload')
+    imgUpload: require('./imgUpload'),
+    deleteAccount: require('./deleteAccount'),
 }

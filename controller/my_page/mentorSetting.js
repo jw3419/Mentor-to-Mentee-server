@@ -8,9 +8,9 @@ module.exports = {
         })
         let mentorInfo = userInfo.dataValues.mentor.dataValues
         if (!mentorInfo) {
-            res.json({ data: null, message: `this is not a mentor's account` })
+            res.status(400).json({ data: null, message: `Can't find the account` })
         } else {
-            res.status(200).json({ data: mentorInfo, message: 'Success to load a page' })
+            res.status(200).json({ data: mentorInfo, message: 'Completely load a page'  })
         }
     },
     post: async (req, res) => {
@@ -22,6 +22,6 @@ module.exports = {
             career: req.body.career,
             description: req.body.description,
         }, { where: { mentorEmail: req.body.mentorEmail } })
-        res.status(201).json({ data: req.body, message: "Succes to set the user information" })
+        res.status(201).json({ data: req.body, message: "Completely set the user information" })
     }
 }
