@@ -2,6 +2,7 @@ const { qa, mentor, mentee } = require('../../models')
 
 module.exports = {
     post: async (req, res) => {
+        console.log(req.body)
         if (req.body.brief && req.body.question) {
             let menteeInfo = await mentee.findOne({ where: { menteeEmail: req.body.email } })
             let mentorInfo = await mentor.findOne({ where: { mentorEmail: req.body.mentorEmail } })
